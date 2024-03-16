@@ -13,7 +13,7 @@ class MemberServiceTest {
 
     MemberService memberService;
     MemoryMemberRepository memberRepository =  new MemoryMemberRepository();
-
+    //d
     @BeforeEach
     public void beforeEach() {
         memberRepository = new MemoryMemberRepository();

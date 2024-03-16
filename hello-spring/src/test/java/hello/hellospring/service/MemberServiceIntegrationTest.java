@@ -1,14 +1,10 @@
 package hello.hellospring.service;
-
 import hello.hellospring.domain.Member;
-import hello.hellospring.repository.MemoryMemberRepository;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import hello.hellospring.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -18,12 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
-    @Autowired MemoryMemberRepository memberRepository =  new MemoryMemberRepository();
-
-    @AfterEach
-    public void afterEach() {
-        memberRepository.clearStore();
-    }
+    @Autowired MemberRepository memberRepository;
 
     @Test
     public void 회원가입() throws Exception {
